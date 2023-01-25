@@ -1,4 +1,4 @@
-const API_KEY = "nUwsU_s90-gPi9MmYXSxBO1tpLH-4HO93zerjnkeoilYXIN2xqA5iFmkZc59EdL3vWLw2K7x4rpRV1SiVLqPhZFj4oPzJgCWwaMI-69RActy0j4-fovcuiroFx29Y3Yx";
+const API_KEY = "YOUR_API_KEY";
 const fetch = require('node-fetch');
 const path = require('path');
 const express = require('express');
@@ -18,15 +18,6 @@ router.get('*', async function (req, res) {
   res.sendFile(path.join(__dirname, '../src/index.html'));
   res.status(301);
 });
-
-
-
-// exports.handler = async function (event, context) {
-//   return {
-//     statusCode: 200,
-//     body: path.join(__dirname, '../dist/index.html')
-//   };
-// };
 
 router.post('*', async function (req, res) {
   let location = req.body.location;
