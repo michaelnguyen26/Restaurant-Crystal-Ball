@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+* {
+	box-sizing: border-box;
+}
+:root {
+	--input-border: #8b8a8b;
+	--input-focus-h: 245;
+	--input-focus-s: 100%;
+	--input-focus-l: 42%;
+  }
+
+body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 0;
+	min-height: calc(100vh - 60px);
+	background-color: rgb(153, 235, 235);
+}
+
+
+h2 {
+	text-align: center;
+	margin: 0;
+	font-family: 'Raleway';
+	font-weight: bold;
+}
+
+.meal {
+	margin: 20px 0;
+}
+
+.text-center {
+	text-align: center;
+}
+
+#food_type:hover {
+	background-color: rgb(255, 255, 255);
+}
+
+#location:hover {
+	background-color: rgb(255, 255, 255);
+}
+
+#result:hover {
+	background-color: rgb(255, 255, 255);
+}
+
+
+input[type=text] {
+	width: 100px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	font-size: 16px;
+	font-size: max(16px, 1em);
+	font-family: inherit;
+	padding: 0.25em 0.5em;
+	background-color: #fff;
+	border: 2px solid var(--input-border);
+	border-radius: 4px;
+}
+
+input[type=text]:focus {
+	width: 18%;
+}
+
+form{
+	font-size: 18px;
+	font-size: max(18px, 1em);
+	font-weight: bolder;
+}
+
+
+#floating {
+	position: absolute;
+	left: 300px;
+	top: 120px;
+	transform: translateY(-10%);
+	animation: floating 1.5s infinite;
+	transition: ease 0.5s;
+	background-color: transparent;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(-10%);
+		transition: ease 0.5s;
+	}
+
+	50% {
+		transform: translateY(10%);
+		transition: ease 0.5s;
+	}
+}
+
+#floating2 {
+	position: absolute;
+	right: 300px;
+	top: 120px;
+	transform: translateY(-10%);
+	animation: floating2 1.5s infinite;
+	transition: ease 0.5s;
+	background-color: transparent;
+}
+
+@keyframes floating2 {
+	0% {
+		transform: translateY(-10%);
+		transition: ease 0.5s;
+	}
+
+	50% {
+		transform: translateY(10%);
+		transition: ease 0.5s;
+	}
+}

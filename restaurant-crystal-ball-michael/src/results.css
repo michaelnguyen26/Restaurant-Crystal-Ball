@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    min-height: calc(100vh - 60px);
+    background-color: rgb(153, 235, 235);
+}
+
+
+
+h1 {
+    font-family: 'Raleway';
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Raleway';
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+a {
+    font-family: 'Raleway';
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.result {
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    border-width: 2px;
+    animation: mymove 2s infinite;
+}
+
+@keyframes mymove {
+    50% {border-color: rgb(210, 151, 238);}
+  }
+  
+
+.image {
+    position: relative;
+    left: 25%;
+    right:25%;
+}
+
+.tag {
+    text-align: center;
+    font-size: large;
+}
