@@ -1,9 +1,7 @@
-[Settings]
-ID = "0b8b4101-fb86-48bd-bed7-e15bbdda6226"
-
 [build]
-    functions = "./functions"
-    CI= "npm run build"
+    publish = "dist/"
+    functions = "functions"
+    CI = "npm install && npm run build"
 
     # If skip_processing = true, all other settings are ignored
     [build.processing]
@@ -20,8 +18,10 @@ ID = "0b8b4101-fb86-48bd-bed7-e15bbdda6226"
         compress = true
 
 [dev]
-    publish = "src/"
+    base = "restaurant-crystal-ball-michael/"
+    publish = "dist/"
     functions = "functions/"
+    command = "npm start"
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
@@ -43,9 +43,12 @@ ID = "0b8b4101-fb86-48bd-bed7-e15bbdda6226"
 
 [functions]
     directory = "functions/"
+    node_bundler = "esbuild"
+    external_node_modules = ["express"]
+    included_files = ["dist/**"]
 
 [[redirects]]
     from = "/*"
-    to = "/.netlify/functions/app"
+    to = "/.netlify/functions/server"
     status = 301
     force = true # COMMENT: ensure that we always redirect

@@ -1,4 +1,4 @@
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "nUwsU_s90-gPi9MmYXSxBO1tpLH-4HO93zerjnkeoilYXIN2xqA5iFmkZc59EdL3vWLw2K7x4rpRV1SiVLqPhZFj4oPzJgCWwaMI-69RActy0j4-fovcuiroFx29Y3Yx";
 const fetch = require('node-fetch');
 const path = require('path');
 const express = require('express');
@@ -10,16 +10,17 @@ const router = express.Router();
 let url = "https://api.yelp.com/v3/businesses/search?"
 let htmlResult = "";
 
+
 router.use(bodyParser.urlencoded({ extended: false }));
-router.use(express.static(path.join(__dirname, '../src/')));
+router.use(express.static(path.join(__dirname, '../dist/')));
 
 // Serve the HTML file
-router.get('*', async function (req, res) {
-  res.sendFile(path.join(__dirname, '../src/index.html'));
-  res.status(301);
+router.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-router.post('*', async function (req, res) {
+// Need to make an async function since request to API takes time
+router.post('/', async function (req, res) {
   let location = req.body.location;
   let food = req.body.food;
   let result = req.body.results;
@@ -73,43 +74,44 @@ router.post('*', async function (req, res) {
 
     //set the appropriate HTTP header
     res.setHeader('Content-Type', 'text/html');
-
+    
 
     //send multiple responses to the client
     htmlResult = htmlResult + `<div class = "result">
-          <h1><b>Restaurant: ${names[r]} <b></h1>
-          <h2><b>Address: ${address}<b></h2>
-          <div class = "image">
-          <img src=${images[r]} alt="food-image" width="300" height="300"></img> 
-          </div>
-          <div class = "tag">
-          <a href=${yelpurl[r]}><b>Yelp URL<b></a><br> 
-          </div>  </div><br><br> `;
+        <h1><b>Restaurant: ${names[r]} <b></h1>
+        <h2><b>Address: ${address}<b></h2>
+        <div class = "image">
+        <img src=${images[r]} alt="food-image" width="300" height="300"></img> 
+        </div>
+        <div class = "tag">
+        <a href=${yelpurl[r]}><b>Yelp URL<b></a><br> 
+        </div>  </div><br><br> `;
   }
 
   let html = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Restaurant Crystal Ball</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./results.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-    ${htmlResult}
-    </body>`
-
+  <html lang="en">
+  <head>
+      <title>Restaurant Crystal Ball</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="./results.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  ${htmlResult}
+  </body>`
+  
 
   res.write(html + "<script>alert(\"RANDOM RESTAURANT HAS BEEN CHOSEN!\")</script>");
   res.end();
   htmlResult = "";
   html = "";
-  res.status(200);
 
 });
 
-app.use('/.netlify/functions/app', router);
+app.use('/.netlify/functions/server', router);
+module.exports = app
 module.exports.handler = serverless(app);
+
