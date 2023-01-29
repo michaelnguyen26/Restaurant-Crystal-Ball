@@ -131,3 +131,28 @@ form{
 		transition: ease 0.5s;
 	}
 }
+
+/* Popup container */
+.popup {
+	position: relative;
+	display: inline-block;
+	color: blue;
+  }
+  
+  /* popup text */
+  .popup .popuptext {
+	visibility: hidden;
+	width: 800px;
+	background-color: gray;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+   
+	position: absolute;
+	z-index: 1;
+  }
+  
+  .popup:hover .popuptext {
+	visibility: visible;
+  }

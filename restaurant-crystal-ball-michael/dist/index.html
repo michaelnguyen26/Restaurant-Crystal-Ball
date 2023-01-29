@@ -22,16 +22,32 @@
     <div class="container">
         <div class="row text-center">
             <h2>
-                <b>Restaurant Crystal Ball</b><br><br>
+                <b>Michael's Restaurant Crystal Ball</b><br><br>
             </h2>
+            
             <form method="post">
                 <b>What type of food are you craving?</b><br>  <input type="text" name = "food" class="form-check-input" id = "food_type">
                 <br><br>
                 <b>Location</b><br> <input type="text" name = "location" class="form-check-input" id = "location">   
                 <br><br> 
-                <b>How many random results? (Limit 25)</b><br> <input type="text" name = "results" class="form-check-input" id = "result"> <br> <br> 
+                
+                <b>How many random results?</b>
+                <br> 
+                <div class="popup" onclick="myFunction()">What's this?
+                    <span class="popuptext" id="myPopup"><b>The maximum amount of random results is 25</b> - Lower the limit to 5 or less if the crystal ball fails to find a restaurant</span>
+                </div>
+                <br>
+                <input type="text" name = "results" class="form-check-input" id = "result"> <br> <br> 
                 <input type = "submit" class="btn btn-primary" id="get_restaurant" value="Send to Crystal Ball!">
              </form> 
         </div>
     </div>
+
+    <script>
+        // Open pop up
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+    </script>
 </body>
