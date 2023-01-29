@@ -1,4 +1,4 @@
-const API_KEY = "nUwsU_s90-gPi9MmYXSxBO1tpLH-4HO93zerjnkeoilYXIN2xqA5iFmkZc59EdL3vWLw2K7x4rpRV1SiVLqPhZFj4oPzJgCWwaMI-69RActy0j4-fovcuiroFx29Y3Yx";
+const API_KEY = "YOUR_YELP_API_KEY";
 const fetch = require('node-fetch');
 const path = require('path');
 const express = require('express');
