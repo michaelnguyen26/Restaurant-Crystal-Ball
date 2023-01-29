@@ -18,10 +18,8 @@
         compress = true
 
 [dev]
-    base = "restaurant-crystal-ball-michael/"
     publish = "dist/"
-    functions = "functions/"
-    command = "npm start"
+    functions = "functions"
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
@@ -45,7 +43,8 @@
     directory = "functions/"
     node_bundler = "esbuild"
     external_node_modules = ["express"]
-    included_files = ["dist/**"]
+    included_files = ["dist/**"]    
+    
 
 [[redirects]]
     from = "/*"

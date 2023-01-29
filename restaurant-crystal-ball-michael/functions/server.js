@@ -104,7 +104,7 @@ router.post('/', async function (req, res) {
   </body>`
   
 
-  res.write(html + "<script>alert(\"RANDOM RESTAURANT HAS BEEN CHOSEN!\")</script>");
+  res.write(html + `<script>alert(\"THE CRYSTAL BALL FOUND ${result} RESTAURANTS!\")</script>`);
   res.end();
   htmlResult = "";
   html = "";

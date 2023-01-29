@@ -19,7 +19,22 @@ body {
 	align-items: center;
 	padding: 30px 0;
 	min-height: calc(100vh - 60px);
-	background-color: rgb(153, 235, 235);
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 35s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 
@@ -82,7 +97,6 @@ form{
 	transform: translateY(-10%);
 	animation: floating 1.5s infinite;
 	transition: ease 0.5s;
-	background-color: transparent;
 }
 
 @keyframes floating {
@@ -104,7 +118,6 @@ form{
 	transform: translateY(-10%);
 	animation: floating2 1.5s infinite;
 	transition: ease 0.5s;
-	background-color: transparent;
 }
 
 @keyframes floating2 {

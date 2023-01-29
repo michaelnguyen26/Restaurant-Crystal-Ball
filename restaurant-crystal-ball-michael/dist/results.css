@@ -12,9 +12,23 @@ body {
     align-items: center;
     padding: 30px 0;
     min-height: calc(100vh - 60px);
-    background-color: rgb(153, 235, 235);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+    animation: gradient 35s ease infinite;
 }
 
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 
 h1 {
@@ -36,26 +50,31 @@ a {
     text-align: center;
 }
 
-.result {
-    border-style: solid;
-    border-color: black;
-    border-radius: 15px;
-    border-width: 2px;
-    animation: mymove 2s infinite;
-}
-
-@keyframes mymove {
-    50% {border-color: rgb(210, 151, 238);}
+.result{
+    width: 800px;
+    background: linear-gradient(90deg, blue 50%, transparent 50%), linear-gradient(90deg, blue 50%, transparent 50%), linear-gradient(0deg, blue 50%, transparent 50%), linear-gradient(0deg, blue 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 15px 4px, 15px 4px, 4px 15px, 4px 15px;
+    padding: 10px;
+    animation: border-dance 4s infinite linear;
   }
   
+  @keyframes border-dance {
+    0% {
+      background-position: 0 0, 100% 100%, 0 100%, 100% 0;
+    }
+    100% {
+      background-position: 100% 0, 0 100%, 0 0, 100% 100%;
+    }
+  }
 
 .image {
-    position: relative;
-    left: 25%;
-    right:25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tag {
     text-align: center;
-    font-size: large;
+    font-size: 200%;
 }
