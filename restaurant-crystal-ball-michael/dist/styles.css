@@ -4,12 +4,13 @@
 * {
 	box-sizing: border-box;
 }
+
 :root {
 	--input-border: #8b8a8b;
 	--input-focus-h: 245;
 	--input-focus-s: 100%;
 	--input-focus-l: 42%;
-  }
+}
 
 body {
 	position: relative;
@@ -29,9 +30,11 @@ body {
 	0% {
 		background-position: 0% 50%;
 	}
+
 	50% {
 		background-position: 100% 50%;
 	}
+
 	100% {
 		background-position: 0% 50%;
 	}
@@ -83,7 +86,7 @@ input[type=text]:focus {
 	width: 18%;
 }
 
-form{
+form {
 	font-size: 18px;
 	font-size: max(18px, 1em);
 	font-weight: bolder;
@@ -137,10 +140,10 @@ form{
 	position: relative;
 	display: inline-block;
 	color: blue;
-  }
-  
-  /* popup text */
-  .popup .popuptext {
+}
+
+/* popup text */
+.popup .popuptext {
 	visibility: hidden;
 	width: 800px;
 	background-color: gray;
@@ -148,11 +151,36 @@ form{
 	text-align: center;
 	padding: 5px 0;
 	border-radius: 6px;
-   
+
 	position: absolute;
 	z-index: 1;
-  }
-  
-  .popup:hover .popuptext {
+}
+
+.popup:hover .popuptext {
 	visibility: visible;
-  }
+}
+
+#footer {
+	width: 100%;
+	bottom: 0;
+	position: fixed;
+	display: table;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a:link,
+a:visited {
+	background-color: #000000;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+a:hover,
+a:active {
+	background-color: red;
+}

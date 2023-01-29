@@ -1,4 +1,4 @@
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "nUwsU_s90-gPi9MmYXSxBO1tpLH-4HO93zerjnkeoilYXIN2xqA5iFmkZc59EdL3vWLw2K7x4rpRV1SiVLqPhZFj4oPzJgCWwaMI-69RActy0j4-fovcuiroFx29Y3Yx";
 const fetch = require('node-fetch');
 const path = require('path');
 const express = require('express');
@@ -79,13 +79,13 @@ router.post('/', async function (req, res) {
     //send multiple responses to the client
     htmlResult = htmlResult + `<div class = "result">
         <h1><b>Restaurant: ${names[r]} <b></h1>
-        <h2><b>Address: ${address}<b></h2>
+        <h2><b>Address: ${address}<b></h2><br> 
         <div class = "image">
-        <img src=${images[r]} alt="food-image" width="300" height="300"></img> 
-        </div>
-        <div class = "tag">
-        <a href=${yelpurl[r]}><b>Yelp URL<b></a><br> 
-        </div>  </div><br><br> `;
+          <img src=${images[r]} alt="food-image" width="300" height="300"></img> 
+        </div><br> 
+        <div id = "tag">
+          <a href=${yelpurl[r]}><b>Yelp URL<b></a><br> 
+        </div><br>   </div><br><br> `;
   }
 
   let html = `<!DOCTYPE html>
