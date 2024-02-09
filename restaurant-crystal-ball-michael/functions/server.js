@@ -78,7 +78,7 @@ router.post('/', async function (req, res) {
 
     //send multiple responses to the client
     htmlResult = htmlResult + `<div class = "result">
-        <h1><b>Restaurant: ${names[r]} <b></h1>
+        <h1><b>${names[r]} <b></h1>
         <h2><b>Address: ${address}<b></h2><br> 
         <div class = "image">
           <img src=${images[r]} alt="food-image" width="300" height="300"></img> 
